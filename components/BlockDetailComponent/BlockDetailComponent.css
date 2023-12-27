@@ -1,0 +1,8 @@
+.block-text-detail {
+	margin-top: 10px;
+}
+
+.block-text-detail .title-detail {
+	color: var(--detailColor);
+	font-weight: 500;
+}

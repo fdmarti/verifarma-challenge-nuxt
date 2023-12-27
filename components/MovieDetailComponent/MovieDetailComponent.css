@@ -1,0 +1,31 @@
+.detail-movie {
+	padding: 30px;
+	background-color: var(--bgCardColor);
+	border-radius: 15px;
+	display: flex;
+	gap: 2rem;
+}
+
+.detail-movie .picture img {
+	width: 400px;
+	border-radius: 10px;
+}
+
+.detail-movie .plot {
+	max-width: 500px;
+	line-height: 25px;
+	font-size: 18px;
+}
+
+.movie-content {
+	position: relative;
+}
+
+.detail-movie .more-information {
+	position: absolute;
+	bottom: 0;
+}
+
+.detail-movie .more-information:hover {
+	text-decoration: underline;
+}

@@ -1,0 +1,21 @@
+.ratings {
+	margin-top: 20px;
+}
+
+.ratings h2 {
+	color: var(--raitings);
+	text-transform: uppercase;
+}
+
+.rates {
+	display: flex;
+	justify-content: space-evenly;
+	margin-top: 20px;
+	text-align: center;
+}
+
+.rate {
+	display: flex;
+	flex-direction: column;
+	gap: 0.7rem;
+}

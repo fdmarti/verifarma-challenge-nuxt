@@ -1,0 +1,14 @@
+.btn {
+	padding: 10px;
+	text-transform: uppercase;
+	font-weight: 700;
+	background-color: var(--btnColor);
+	color: var(--lightColor);
+	border: none;
+	border-radius: 5px;
+}
+
+.btn:hover {
+	cursor: pointer;
+	opacity: 0.8;
+}

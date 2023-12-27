@@ -1,0 +1,32 @@
+.login {
+	background-color: var(--BgColorLight);
+	border-radius: 10px;
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
+	margin: 90px auto;
+	padding: 40px;
+	width: 340px;
+}
+
+hr {
+	width: 100%;
+	margin: 0 auto 15px;
+}
+
+.account {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	margin-top: 20px;
+}
+
+.login a {
+	text-transform: uppercase;
+	font-weight: 500;
+	font-size: 14px;
+}
+
+.login a:hover {
+	text-decoration: underline;
+}

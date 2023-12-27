@@ -1,0 +1,63 @@
+@import './fonts.css';
+
+:root {
+	--BgColor: #1e2747;
+	--BgColorLight: #7380c7;
+	--bgCardColor: #444655;
+
+	--btnColor: #3d4f91;
+	--detailColor: #22c197;
+
+	--inputBorder: #ddeeed;
+	--raitings : #FFC75F;
+
+	--black: #000;
+	--white: #fff;
+	--lightColor: #eceeff;
+}
+
+* {
+	font-family: 'Roboto', sans-serif;
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	background-color: var(--BgColor);
+}
+
+#__nuxt {
+	display: flex;
+	align-items: center;
+}
+
+a {
+	text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+p,
+a,
+span {
+	color: var(--lightColor);
+}
+
+.layout {
+	width: 100%;
+}
+
+input {
+	padding: 10px 10px;
+	border: 1px solid #666;
+	border-radius: 5px;
+	outline: none;
+	font-size: 16px;
+}
+
+input:focus {
+	border: 1px solid var(--inputBorder);
+}
