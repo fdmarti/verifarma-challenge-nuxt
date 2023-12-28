@@ -19,3 +19,16 @@
 	flex-direction: column;
 	gap: 0.7rem;
 }
+
+@media (max-width: 600px) {
+	.rates {
+		flex-direction: column;
+		gap: 1.2rem;
+	}
+
+	.rate {
+		flex-direction: row;
+		text-align: left;
+		justify-content: space-between;
+	}
+}

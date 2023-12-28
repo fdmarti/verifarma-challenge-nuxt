@@ -10,7 +10,8 @@
 		/>
 		<SpinnerComponent v-if="isLoading" />
 	</div>
-	<ListMoviesComponent />
+	<ErrorComponent v-if="hasError"/>
+	<ListMoviesComponent v-else/>
 </template>
 
 <script setup lang="ts">
@@ -25,10 +26,12 @@
 
 	const store = useMoviesStore();
 	const { getMovies } = store;
-	const { isLoading } = storeToRefs(store);
+	const { isLoading, hasError } = storeToRefs(store);
 
 	const searchResults = () => {
-		getMovies(searchValue.value);
+		if ( searchValue.value.trim().length > 0 ){
+			getMovies(searchValue.value);
+		}
 	};
 
 	definePageMeta({

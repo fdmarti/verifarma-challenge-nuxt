@@ -1,0 +1,12 @@
+.pagination {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 1rem;
+	margin-bottom: 40px;
+}
+
+.pagination .current-page {
+	font-size: 20px;
+	font-weight: 700;
+}

@@ -13,3 +13,12 @@
 input.isLoading {
 	pointer-events: none;
 }
+
+@media (max-width: 600px) {
+	.block-movies {
+		padding: 0 40px;
+	}
+	.block-movies input {
+		width: 100%;
+	}
+}

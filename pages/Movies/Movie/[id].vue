@@ -10,13 +10,20 @@
 	import { useMoviesStore } from '../../../store/movies';
 	import { storeToRefs } from 'pinia';
 
+	const { params } = useRoute();
+	const imdbID = params.id as string;
+
+	const store = useMoviesStore();
+	const { getMovieDetails } = store;
+	const { isLoading, movie } = storeToRefs(store);
+
 	definePageMeta({
 		middleware: 'auth',
 		layout: 'user-layout',
 	});
 
 	useHead({
-		title: 'Verifarma - Movie Details',
+		title: `Verifarma - Movie Detail`,
 		meta: [
 			{
 				name: 'description',
@@ -24,13 +31,6 @@
 			},
 		],
 	});
-
-	const { params } = useRoute();
-	const imdbID = params.id as string;
-
-	const store = useMoviesStore();
-	const { getMovieDetails } = store;
-	const { isLoading, movie } = storeToRefs(store);
 
 	getMovieDetails(imdbID);
 </script>
