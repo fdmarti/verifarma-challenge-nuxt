@@ -4,16 +4,19 @@ import { resolve } from 'path';
 export default defineNuxtConfig({
 	devtools: { enabled: true },
 	alias: {
-		'@': resolve(__dirname, '/'),
+		'@': resolve(__dirname, '/')
 	},
 	css: ['./assets/styles/main.css'],
-	modules: ['@pinia/nuxt'],
+	modules: [
+		'@pinia/nuxt',
+		'@nuxtjs/eslint-module'
+	],
 	imports: {
-		dirs: ['./store'],
+		dirs: ['./store']
 	},
 	runtimeConfig: {
 		app: {
-			MOVIE_API: process.env.NUXT_API_MOVIES_URL,
-		},
-	},
+			MOVIE_API: process.env.NUXT_API_MOVIES_URL
+		}
+	}
 });

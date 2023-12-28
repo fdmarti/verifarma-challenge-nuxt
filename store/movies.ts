@@ -12,7 +12,7 @@ const initialState = {
 	isLoading: false as boolean,
 
 	error: {} as Error,
-	hasError: false as boolean,
+	hasError: false as boolean
 };
 
 export const useMoviesStore = defineStore('movie', {
@@ -24,10 +24,8 @@ export const useMoviesStore = defineStore('movie', {
 			this.valueSearch = text;
 			const config = useRuntimeConfig();
 			const data = await $fetch<Movies>(
-				`${config.app.MOVIE_API}s=${text}&page=${page}`,
+				`${config.app.MOVIE_API}s=${text}&page=${page}`
 			);
-
-			console.log(initialState);
 
 			if (data.Response === 'True') {
 				this.movies = data;
@@ -43,22 +41,28 @@ export const useMoviesStore = defineStore('movie', {
 			this.isLoading = false;
 		},
 
-		async getMovieDetails(id: string) {
+		async getMovieDetails(idMovie: string) {
 			this.movie = {};
 			this.isLoading = true;
 			const config = useRuntimeConfig();
-			this.movie = await $fetch<Search>(`${config.app.MOVIE_API}i=${id}`);
+			this.movie = await $fetch<Search>(`${config.app.MOVIE_API}i=${idMovie}`);
 			this.isLoading = false;
 		},
 
 		nextPage() {
-			if (this.currentPage >= this.pages) return;
+			if (this.currentPage >= this.pages) {
+				return;
+			}
+
 			this.currentPage++;
 			this.reloadList();
 		},
 
 		previousPage() {
-			if (this.currentPage <= 1) return;
+			if (this.currentPage <= 1) {
+				return;
+			}
+
 			this.currentPage--;
 			this.reloadList();
 		},
@@ -69,7 +73,7 @@ export const useMoviesStore = defineStore('movie', {
 
 		resetMovieState() {
 			Object.assign(initialState, initialState);
-		},
+		}
 	},
 
 	getters: {
@@ -78,6 +82,6 @@ export const useMoviesStore = defineStore('movie', {
 		},
 		moviesDetail(state) {
 			return state.movie;
-		},
-	},
+		}
+	}
 });

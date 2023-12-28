@@ -1,7 +1,7 @@
 <template>
-	<div class="loader"></div>
+  <div class="loader" />
 </template>
 
 <script setup lang="ts">
-	import './SpinnerComponent.css';
+import './SpinnerComponent.css';
 </script>

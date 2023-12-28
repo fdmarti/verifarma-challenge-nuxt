@@ -1,5 +1,7 @@
 .block-text-detail {
 	margin-top: 10px;
+	max-width: 600px;
+	line-height: 22px;
 }
 
 .block-text-detail .title-detail {

@@ -6,6 +6,25 @@
 	gap: 2rem;
 }
 
+.detail-movie .title-movie {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 2rem;
+}
+
+.detail-movie .title-movie h2 {
+	max-width: 500px;
+}
+
+.detail-movie .title-movie a {
+	background: var(--btnColor);
+	font-size: 30px;
+	padding: 5px 10px 9px;
+	border-radius: 50%;
+	color: var(--inputBorder);
+}
+
 .detail-movie .picture img {
 	width: 400px;
 	border-radius: 10px;

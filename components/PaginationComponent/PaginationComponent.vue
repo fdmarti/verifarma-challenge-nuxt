@@ -1,15 +1,21 @@
 <template>
-	<div class="pagination">
-		<ButtonComponent @click="previousPage" text="<" />
-		<span class="current-page">{{ currentPage }}</span>
-		<ButtonComponent @click="nextPage" text=">" />
-	</div>
+  <div class="pagination">
+    <ButtonComponent
+      text="<"
+      @click="previousPage"
+    />
+    <span class="current-page">{{ currentPage }}</span>
+    <ButtonComponent
+      text=">"
+      @click="nextPage"
+    />
+  </div>
 </template>
 
 <script setup lang="ts">
-	import './PaginationComponent.css';
+import './PaginationComponent.css';
 
-	const store = useMoviesStore();
-	const { currentPage } = storeToRefs(store);
-	const { nextPage, previousPage } = store;
+const store = useMoviesStore();
+const { currentPage } = storeToRefs(store);
+const { nextPage, previousPage } = store;
 </script>
