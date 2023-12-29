@@ -63,3 +63,5 @@ You could try with the following credentials:
 email : `test@test.com`
 
 password : `abc123`
+
+Or you could create a new user but be careful! You must use a real email because it has a confirmation email for login!

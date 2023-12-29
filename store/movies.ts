@@ -71,10 +71,6 @@ export const useMoviesStore = defineStore('movie', {
 
 		reloadList() {
 			this.getMovies(this.valueSearch, this.currentPage);
-		},
-
-		resetMovieState() {
-			Object.assign(initialState, initialState);
 		}
 	},
 
