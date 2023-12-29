@@ -1,8 +1,25 @@
-# Nuxt 3 Minimal Starter
+# Nuxt 3 Verifarme Challenge
 
-Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
 
 ## Setup
+
+## Environment Variables
+
+To run this project, you will need to add the following environment variables to your .env file
+
+First of all, you have to create an account on the link below, this will be helpful for the API call to get the movies.
+
+[OMDBapi](https://www.omdbapi.com/)
+
+`NUXT_API_MOVIES_URL="http://www.omdbapi.com/?apikey=${yourApiKey}&"`
+
+
+Then need to create an account in [Supabase](https://supabase.com/) and create a new organization. After that, you will have to add the following environment variables so the login can work 
+
+`SUPABASE_URL=`
+
+`SUPABASE_KEY=`
+
 
 Make sure to install the dependencies:
 
@@ -38,38 +55,11 @@ yarn dev
 bun run dev
 ```
 
-## Production
+## Demo
 
-Build the application for production:
+Here is the demo.
+You could try with the following credentials:
 
-```bash
-# npm
-npm run build
+email : `test@test.com`
 
-# pnpm
-pnpm run build
-
-# yarn
-yarn build
-
-# bun
-bun run build
-```
-
-Locally preview production build:
-
-```bash
-# npm
-npm run preview
-
-# pnpm
-pnpm run preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+password : `abc123`

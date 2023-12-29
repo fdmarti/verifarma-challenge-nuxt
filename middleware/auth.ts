@@ -1,14 +1,14 @@
-export default defineNuxtRouteMiddleware((to, form) => {
-	// const isLogged = true
-
-	if (to.fullPath == '/') {
+const defineNuxtRouteMiddleware = (toNext: any) => {
+	if (toNext.fullPath == '/') {
 		return navigateTo('/login');
 	}
 
+	const useSupabase = useSupabaseUser();
+	const user = useSupabase.value;
 
-	// if ( isLogged ) {
-	//     return navigateTo(to.fullPath)
-	// }
+	if (!user) {
+		return navigateTo('/login');
+	}
+};
 
-	// return navigateTo('/Login')
-});
+export default defineNuxtRouteMiddleware;

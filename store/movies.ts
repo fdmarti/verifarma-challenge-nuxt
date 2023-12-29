@@ -56,6 +56,7 @@ export const useMoviesStore = defineStore('movie', {
 
 			this.currentPage++;
 			this.reloadList();
+			window.scrollTo({ top: 0 });
 		},
 
 		previousPage() {
@@ -65,6 +66,7 @@ export const useMoviesStore = defineStore('movie', {
 
 			this.currentPage--;
 			this.reloadList();
+			window.scrollTo({ top: 0 });
 		},
 
 		reloadList() {

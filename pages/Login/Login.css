@@ -1,14 +1,3 @@
-.login {
-	background-color: var(--BgColorLight);
-	border-radius: 10px;
-	display: flex;
-	flex-direction: column;
-	gap: 0.5rem;
-	margin-top: 50px;
-	padding: 40px;
-	width: 340px;
-}
-
 hr {
 	width: 100%;
 	margin: 0 auto 15px;

@@ -2,7 +2,7 @@
   <div class="detail-movie">
     <section class="picture">
       <img
-        :src="movie.Poster"
+        :src="movie.Poster !== 'N/A' ? movie.Poster : DefaultImage"
         :alt="`${movie.Title} poster`"
       >
     </section>
@@ -57,6 +57,8 @@
 <script setup lang="ts">
 import './MovieDetailComponent.css';
 import type { Movie } from '../../interfaces/movie';
+import DefaultImage from '../../assets/images/no-poster.webp';
+
 
 	interface Props {
 		movie: Movie;

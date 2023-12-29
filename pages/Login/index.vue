@@ -1,21 +1,26 @@
 <template>
-  <div class="login">
+  <div class="login form-block">
     <h2>Sign In</h2>
     <hr>
-    <input
-      v-model="formData.email"
-      type="email"
-      placeholder="Email"
+    <form
+      class="form"
+      @submit.prevent="login"
     >
-    <input
-      v-model="formData.password"
-      type="password"
-      placeholder="Password"
-    >
-    <ButtonComponent
-      text="Sign In"
-      @click="login"
-    />
+      <input
+        v-model="formData.email"
+        type="email"
+        placeholder="Email"
+      >
+      <input
+        v-model="formData.password"
+        type="password"
+        placeholder="Password"
+      >
+      <ButtonComponent
+        text="Sign In"
+        :is-loading="isLoading"
+      />
+    </form>
 
     <ErrorComponent
       v-if="hasError"
@@ -23,7 +28,7 @@
     />
 
     <section class="account">
-      <a href="#">Register</a>
+      <RouterLink to="/Register">Register</RouterLink>
       <a href="#">Forgot Password</a>
     </section>
   </div>
@@ -31,40 +36,30 @@
 
 <script setup lang="ts">
 import './Login.css';
-import type { Error } from '~/interfaces/error';
-import { reactive } from 'vue';
+import { useUserStore } from '../../store/user';
+const router = useRouter();
+
+import type { User } from '../../interfaces/user';
 
 useHead({
 	title: 'Verifarma - Login',
 	meta: [{ name: 'description', content: 'Login page' }]
 });
 
-const router = useRouter();
+const userStore = useUserStore();
+const { error, hasError, isLoading } = storeToRefs(userStore);
 
-interface Login {
-	email: string;
-	password: string;
-}
-
-const formData = reactive<Login>({
+const formData = reactive<User>({
 	email: '',
 	password: ''
 });
 
-const error = reactive<Error>({
-	Error: 'Wrong credentials'
-});
-
-const hasError = ref(false);
-
-const login = () => {
+const login = async() => {
 	if (formData.email && formData.password) {
-		router.push('/movies');
-	} else {
-		hasError.value = true;
-		setTimeout(() => {
-			hasError.value = false;
-		}, 3000);
+		await userStore.login(formData);
+		if (!hasError.value) {
+			router.push('/Movies');
+		}
 	}
 };
 </script>
