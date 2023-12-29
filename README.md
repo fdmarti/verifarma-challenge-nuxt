@@ -14,7 +14,7 @@ First of all, you have to create an account on the link below, this will be help
 `NUXT_API_MOVIES_URL=http://www.omdbapi.com/?apikey=${yourApiKey}&`
 
 
-Then need to create an account in [Supabase](https://supabase.com/) and create a new organization. After that, you will have to add the following environment variables so the login can work 
+Then need to create an account in [Supabase](https://supabase.com/) and create a new organization. After that, you will have to add the following environment variables so the login can work. Here is a youtube link if you are not familiar with Supabase(https://www.youtube.com/watch?v=-jISW-jVG-s)
 
 `SUPABASE_URL=`
 
