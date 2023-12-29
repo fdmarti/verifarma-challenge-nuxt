@@ -2,7 +2,7 @@
   <div class="register form-block">
     <section class="title-register">
       <h2>Register</h2>
-      <RouterLink to="/movies">
+      <RouterLink to="/login">
         ←
       </RouterLink>
     </section>
@@ -48,6 +48,9 @@ const router = useRouter();
 useHead({
 	title: 'Verifarma - Register',
 	meta: [{ name: 'description', content: 'Registration page' }]
+});
+definePageMeta({
+	middleware: 'default'
 });
 
 const userStore = useUserStore();

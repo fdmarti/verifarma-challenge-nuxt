@@ -45,6 +45,9 @@ useHead({
 	title: 'Verifarma - Login',
 	meta: [{ name: 'description', content: 'Login page' }]
 });
+definePageMeta({
+	middleware: 'default'
+});
 
 const userStore = useUserStore();
 const { error, hasError, isLoading } = storeToRefs(userStore);

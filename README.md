@@ -11,7 +11,7 @@ First of all, you have to create an account on the link below, this will be help
 
 [OMDBapi](https://www.omdbapi.com/)
 
-`NUXT_API_MOVIES_URL="http://www.omdbapi.com/?apikey=${yourApiKey}&"`
+`NUXT_API_MOVIES_URL=http://www.omdbapi.com/?apikey=${yourApiKey}&`
 
 
 Then need to create an account in [Supabase](https://supabase.com/) and create a new organization. After that, you will have to add the following environment variables so the login can work 
@@ -57,7 +57,7 @@ bun run dev
 
 ## Demo
 
-Here is the demo.
+[Here](https://verifarmamovieschallenge.netlify.app) is the demo.
 You could try with the following credentials:
 
 email : `test@test.com`

@@ -88,3 +88,24 @@ input:focus {
 	padding: 40px;
 	width: 340px;
 }
+
+.error-page {
+	background-color: var(--btnColor);
+	padding: 30px;
+	margin: 50px auto;
+	border-radius: 10px;
+	text-align: center;
+}
+
+.error-page h1 {
+	font-size: 52px;
+	margin-bottom: 10px;
+}
+
+.error-page p {
+	margin-bottom: 10px;
+}
+
+.error-page a:hover {
+	text-decoration: underline;
+}
