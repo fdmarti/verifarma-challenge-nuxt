@@ -63,6 +63,10 @@ const formData = reactive<NewUser>({
 });
 
 const register = async() => {
+	if (formData.password !== formData.repeatPassowrd) {
+		return;
+	}
+
 	await userStore.signUp(formData);
 	if (!hasError.value) {
 		router.push('/Login');
