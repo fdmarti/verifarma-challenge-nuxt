@@ -109,3 +109,12 @@ input:focus {
 .error-page a:hover {
 	text-decoration: underline;
 }
+
+.page-enter-active,
+.page-leave-active {
+  transition: opacity 0.5s ease;
+}
+.page-enter-from,
+.page-leave-to {
+  opacity: 0;
+}

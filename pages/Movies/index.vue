@@ -1,20 +1,22 @@
 <template>
-  <div class="block-movies">
-    <h1>Search a movie</h1>
-    <input
-      v-model="searchValue"
-      type="text"
-      :class="{ isLoading: isLoading }"
-      :disabled="isLoading"
-      @keyup.enter="searchResults"
-    >
-    <SpinnerComponent v-if="isLoading" />
+  <div>
+    <div class="block-movies">
+      <h1>Search a movie</h1>
+      <input
+        v-model="searchValue"
+        type="text"
+        :class="{ isLoading: isLoading }"
+        :disabled="isLoading"
+        @keyup.enter="searchResults"
+      >
+      <SpinnerComponent v-if="isLoading" />
+    </div>
+    <ErrorComponent
+      v-if="hasError"
+      :error="error"
+    />
+    <ListMoviesComponent v-else />
   </div>
-  <ErrorComponent
-    v-if="hasError"
-    :error="error"
-  />
-  <ListMoviesComponent v-else />
 </template>
 
 <script setup lang="ts">
