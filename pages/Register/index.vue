@@ -2,9 +2,7 @@
   <div class="register form-block">
     <section class="title-register">
       <h2>Register</h2>
-      <RouterLink to="/login">
-        ←
-      </RouterLink>
+      <RouterLink to="/login"> Go back </RouterLink>
     </section>
     <hr>
     <form

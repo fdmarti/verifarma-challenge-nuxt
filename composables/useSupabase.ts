@@ -7,7 +7,6 @@ export const supabase = () => {
 	const annonKey = config.public.supabase.key;
 	const client = createClient(url, annonKey);
 
-
 	return client;
 };
 

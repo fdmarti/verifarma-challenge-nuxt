@@ -1,10 +1,11 @@
 import { defineStore } from 'pinia';
 import type { Error } from '~/interfaces/error';
-import type { Movies, Search } from '~/interfaces/movies';
+import type { Movie } from '~/interfaces/movie';
+import type { Movies } from '~/interfaces/movies';
 
 const initialState = {
 	movies: {} as Movies,
-	movie: {} as Search,
+	movie: {} as Movie,
 	valueSearch: '' as string,
 
 	pages: 1 as number,
@@ -45,7 +46,18 @@ export const useMoviesStore = defineStore('movie', {
 			this.movie = {};
 			this.isLoading = true;
 			const config = useRuntimeConfig();
-			this.movie = await $fetch<Search>(`${config.app.MOVIE_API}i=${idMovie}`);
+
+			const { Response, ...restData } = await $fetch<Movie>(`${config.app.MOVIE_API}i=${idMovie}`);
+
+			if (Response === 'True') {
+				this.movie = restData;
+			} else {
+				this.hasError = true;
+				this.error = {
+					Error: 'Incorrect IMDb ID'
+				};
+			}
+
 			this.isLoading = false;
 		},
 

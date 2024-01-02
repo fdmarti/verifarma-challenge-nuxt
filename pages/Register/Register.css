@@ -1,20 +1,28 @@
 .register .title-register {
 	display: flex;
-	align-items: center;
 	justify-content: space-between;
 	gap: 2rem;
 }
 
 .register .title-register a {
-	background: var(--btnColor);
-	font-size: 25px;
+	font-size: 20px;
 	padding: 5px 10px 9px;
-	border-radius: 50%;
 	color: var(--inputBorder);
 }
 
+.register .title-register a:hover {
+	text-decoration: underline;
+}
+
 @media (max-width: 600px) {
-	.register{
+	.register {
 		margin: 90px 20px;
+	}
+
+	.register .title-register {
+		flex-direction: column-reverse;
+		align-items: center;
+		gap: 0.7rem;
+		margin-bottom: 10px;
 	}
 }

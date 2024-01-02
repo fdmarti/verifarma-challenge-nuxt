@@ -10,7 +10,7 @@
       <section class="title-movie">
         <h2>{{ movie.Title }} - ({{ movie.Year }})</h2>
         <RouterLink to="/movies">
-          ←
+          Go back
         </RouterLink>
       </section>
 

@@ -18,11 +18,13 @@
 }
 
 .detail-movie .title-movie a {
-	background: var(--btnColor);
-	font-size: 30px;
+	font-size: 20px;
 	padding: 5px 10px 9px;
-	border-radius: 50%;
 	color: var(--inputBorder);
+}
+
+.detail-movie .title-movie a:hover {
+	text-decoration: underline;
 }
 
 .detail-movie .picture img {
@@ -61,6 +63,12 @@
 
 	.detail-movie .picture img {
 		width: 200px;
+	}
+
+	.detail-movie .title-movie {
+		flex-direction: column-reverse;
+		gap: 1rem;
+		margin-bottom: 10px;
 	}
 
 	.movie-content h2,
